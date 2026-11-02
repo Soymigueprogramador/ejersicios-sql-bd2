@@ -99,40 +99,38 @@ INSERT INTO Proveedores (
     Web_Pr,
     Email_Pr
 )
-VALUES
-    (
-        'Distribuidora Central',
-        'Av. Rivadavia 1500',
-        'Moron',
-        'Buenos Aires',
-        '30-12345678-9',
-        '1144556677',
-        'Juan Perez',
-        'www.central.com.ar',
-        'central@email.com'
-    ),
-    (
-        'Comercial del Sur',
-        'San Martin 850',
-        'La Matanza',
-        'Buenos Aires',
-        '30-23456789-0',
-        '1144667788',
-        'Maria Lopez',
-        'www.comercialsur.com.ar',
-        'sur@email.com'
-    ),
-    (
-        'Insumos Argentinos',
-        'Belgrano 420',
-        'Lomas de Zamora',
-        'Buenos Aires',
-        '30-34567890-1',
-        '1144778899',
-        'Carlos Gomez',
-        'www.insumos.com.ar',
-        'insumos@email.com'
-    );
+SELECT
+    'Distribuidora Central',
+    'Av. Rivadavia 1500',
+    'Moron',
+    'Buenos Aires',
+    '30-12345678-9',
+    '1144556677',
+    'Juan Perez',
+    'www.central.com.ar',
+    'central@email.com'
+UNION ALL
+SELECT
+    'Comercial del Sur',
+    'San Martin 850',
+    'La Matanza',
+    'Buenos Aires',
+    '30-23456789-0',
+    '1144667788',
+    'Maria Lopez',
+    'www.comercialsur.com.ar',
+    'sur@email.com'
+UNION ALL
+SELECT
+    'Insumos Argentinos',
+    'Belgrano 420',
+    'Lomas de Zamora',
+    'Buenos Aires',
+    '30-34567890-1',
+    '1144778899',
+    'Carlos Gomez',
+    'www.insumos.com.ar',
+    'insumos@email.com';
 GO
 
 INSERT INTO Articulos (
@@ -141,13 +139,17 @@ INSERT INTO Articulos (
     Stock_Ar,
     PrecioUnitario_Ar
 )
-VALUES
-    (1, 'Teclado', 50, 15000.00),
-    (1, 'Mouse', 80, 8500.00),
-    (2, 'Monitor', 20, 180000.00),
-    (2, 'Impresora', 15, 125000.00),
-    (3, 'Cable USB', 100, 3500.00),
-    (3, 'Auriculares', 40, 22000.00);
+SELECT 1, 'Teclado', 50, 15000.00
+UNION ALL
+SELECT 1, 'Mouse', 80, 8500.00
+UNION ALL
+SELECT 2, 'Monitor', 20, 180000.00
+UNION ALL
+SELECT 2, 'Impresora', 15, 125000.00
+UNION ALL
+SELECT 3, 'Cable USB', 100, 3500.00
+UNION ALL
+SELECT 3, 'Auriculares', 40, 22000.00;
 GO
 
 INSERT INTO Clientes (
@@ -157,10 +159,11 @@ INSERT INTO Clientes (
     Direccion_Cl,
     Telefono_Cl
 )
-VALUES
-    ('30111222', 'Miguel', 'Salazar', 'San Justo 120', '1111222233'),
-    ('31222333', 'Laura', 'Fernandez', 'Ramos Mejia 450', '1122334455'),
-    ('32333444', 'Pedro', 'Martinez', 'Moron 780', '1133445566');
+SELECT '30111222', 'Miguel', 'Salazar', 'San Justo 120', '1111222233'
+UNION ALL
+SELECT '31222333', 'Laura', 'Fernandez', 'Ramos Mejia 450', '1122334455'
+UNION ALL
+SELECT '32333444', 'Pedro', 'Martinez', 'Moron 780', '1133445566';
 GO
 
 INSERT INTO Cuentas (
@@ -168,10 +171,11 @@ INSERT INTO Cuentas (
     LimiteCuenta_Cu,
     SaldoCuenta_Cu
 )
-VALUES
-    ('30111222', 500000.00, 15000.00),
-    ('31222333', 300000.00, 45000.00),
-    ('32333444', 200000.00, 0.00);
+SELECT '30111222', 500000.00, 15000.00
+UNION ALL
+SELECT '31222333', 300000.00, 45000.00
+UNION ALL
+SELECT '32333444', 200000.00, 0.00;
 GO
 
 INSERT INTO Facturas (
@@ -179,11 +183,13 @@ INSERT INTO Facturas (
     TotalFactura_Fa,
     FechaFactura_Fa
 )
-VALUES
-    (1, 38500.00, '2026-10-20'),
-    (1, 180000.00, '2026-10-22'),
-    (2, 125000.00, '2026-10-23'),
-    (3, 25500.00, '2026-10-24');
+SELECT 1, 38500.00, '2026-10-20'
+UNION ALL
+SELECT 1, 180000.00, '2026-10-22'
+UNION ALL
+SELECT 2, 125000.00, '2026-10-23'
+UNION ALL
+SELECT 3, 25500.00, '2026-10-24';
 GO
 
 INSERT INTO DetalleFactura (
@@ -193,11 +199,15 @@ INSERT INTO DetalleFactura (
     Cantidad_Df,
     PrecioUnitario_Df
 )
-VALUES
-    (1, 1, 1, 2, 15000.00),
-    (1, 1, 2, 1, 8500.00),
-    (2, 2, 3, 1, 180000.00),
-    (3, 2, 4, 1, 125000.00),
-    (4, 3, 5, 1, 3500.00),
-    (4, 3, 6, 1, 22000.00);
+SELECT 1, 1, 1, 2, 15000.00
+UNION ALL
+SELECT 1, 1, 2, 1, 8500.00
+UNION ALL
+SELECT 2, 2, 3, 1, 180000.00
+UNION ALL
+SELECT 3, 2, 4, 1, 125000.00
+UNION ALL
+SELECT 4, 3, 5, 1, 3500.00
+UNION ALL
+SELECT 4, 3, 6, 1, 22000.00;
 GO
